@@ -1,0 +1,26 @@
+{
+  "name": "BrainTumorClassifier (Research/Education)",
+  "description": "DenseNet201 MRI classifier with Flask. Research/education only; not for clinical use.",
+  "keywords": [
+    "pytorch",
+    "flask",
+    "cnn",
+    "medical-imaging",
+    "education"
+  ],
+  "env": {
+    "PYTHONUNBUFFERED": {
+      "value": "1"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "scripts": {},
+  "website": "https://github.com/YOUR-USER/BrainTumorClassifier",
+  "repository": "https://github.com/YOUR-USER/BrainTumorClassifier",
+  "image": "heroku/python"
+}

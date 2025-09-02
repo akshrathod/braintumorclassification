@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Brain Tumor Classifier (Research/Education)</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 2rem; }
+      .card { max-width: 560px; padding: 1rem; border: 1px solid #eee; border-radius: 12px; }
+      button { padding: .6rem 1rem; border-radius: 8px; border: 1px solid #ccc; cursor: pointer; }
+      .muted { color: #777; font-size: .9rem; }
+      .warning { color: #b00020; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Brain Tumor Classifier</h2>
+      <p class="muted warning">Research/Education only · Not a medical device · Do not use for diagnosis.</p>
+      <form id="form">
+        <input type="file" name="file" accept="image/*" required />
+        <button type="submit">Predict</button>
+      </form>
+      <pre id="out"></pre>
+    </div>
+    <script>
+      const form = document.getElementById('form');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const res = await fetch('/predict', { method: 'POST', body: fd });
+        const js = await res.json();
+        document.getElementById('out').textContent = JSON.stringify(js, null, 2);
+      });
+    </script>
+  </body>
+</html>
