@@ -18,6 +18,9 @@ def normalize(name: str) -> str:
     n = re.sub(r"[^a-z0-9_]", "", n)
     return n
 
+
+    
+
 def copy_tree(src: Path, dst: Path, map_names: bool):
     dst.mkdir(parents=True, exist_ok=True)
     for cls_dir in sorted([p for p in src.iterdir() if p.is_dir()]):
