@@ -13,6 +13,7 @@ def normalize(name: str) -> str:
     n = n.replace("pituitary_tumor", "pituitary")
     n = n.replace("meningioma_tumor", "meningioma")
     n = n.replace("glioma_tumor", "glioma")
+    
     # strip common suffix/prefix noise
     n = re.sub(r"(?i)_?tumou?r$", "", n)
     n = re.sub(r"[^a-z0-9_]", "", n)
